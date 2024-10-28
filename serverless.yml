@@ -1,0 +1,19 @@
+service: "Muse-India"
+frameworkVersion: "4"
+
+plugins:
+  - serverless-ignore
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+
+functions:
+  sendEmail:
+    handler: email.emailHandler
+    events:
+      - httpApi:
+          path: /email
+          method: post
