@@ -12,7 +12,7 @@ provider:
 
 functions:
   sendEmail:
-    handler: email.emailHandler
+    handler: emails/email.emailHandler
     events:
       - httpApi:
           path: /email
